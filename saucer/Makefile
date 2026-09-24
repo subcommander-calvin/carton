@@ -1,0 +1,25 @@
+IMAGE := carton-saucer
+CONTAINER := saucer
+NETWORK ?= carton-bridge
+HOST_UID := $(shell id -u)
+HOST_USER := $(shell whoami)
+USERS_DIR := $(abspath ../lifepod/users)
+
+.PHONY: build up down shell logs
+
+build:
+	docker build --build-arg HOST_UID=$(HOST_UID) --build-arg HOST_USER=$(HOST_USER) -t $(IMAGE) .
+
+up: build
+	@mkdir -p $(USERS_DIR)
+	docker run -d --name $(CONTAINER) --network $(NETWORK) \
+		-v $(CURDIR):/workspace \
+		-v $(USERS_DIR):/home \
+		$(IMAGE)
+	@echo "🛸 $(CONTAINER) is up on $(NETWORK)."
+
+down:
+	docker stop $(CONTAINER) 2>/dev/null && docker rm $(CONTAINER) 2>/dev/null || true
+
+shell:
+	docker exec -it $(CONTAINER) su - $(HOST_USER)

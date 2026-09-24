@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0",
+  "discordWebhookURL": [],
+  "attachmentsFolder": "",
+  "localSuggestionsLimit": 10,
+  "showPreviewInLocalModal": true,
+  "customBotUsername": "Tracer Bullet",
+  "customBotAvatarURL": "",
+  "useNoteTitleForEmbed": false,
+  "embedDefaultValues": {
+    "embedDefaultTitle": "",
+    "embedDefaultColor": "",
+    "embedDefaultURL": "",
+    "embedDefaultAuthor": {
+      "name": "",
+      "iconURL": "",
+      "url": ""
+    },
+    "embedDefaultDescription": "",
+    "embedDefaultThumbnail": "",
+    "embedDefaultFields": [],
+    "embedDefaultImage": "",
+    "embedDefaultFooter": {
+      "text": "",
+      "iconURL": ""
+    }
+  },
+  "embedPropertyOverrides": {
+    "embedTitlePropertyOverride": "",
+    "embedColorPropertyOverride": "",
+    "embedURLPropertyOverride": "",
+    "embedAuthorPropertyOverride": "",
+    "embedDescriptionPropertyOverride": "",
+    "embedThumbnailPropertyOverride": "",
+    "embedFieldsPropertyOverride": "",
+    "embedImagePropertyOverride": "",
+    "embedFooterPropertyOverride": ""
+  }
+}

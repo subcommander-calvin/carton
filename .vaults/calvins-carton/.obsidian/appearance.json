@@ -1,0 +1,11 @@
+{
+  "theme": "obsidian",
+  "cssTheme": "Minimal",
+  "accentColor": "#36312c",
+  "enabledCssSnippets": [
+    "MCL Wide Views",
+    "MCL Multi Column",
+    "MCL Gallery Cards"
+  ],
+  "showRibbon": true
+}

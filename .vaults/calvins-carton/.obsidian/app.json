@@ -1,0 +1,10 @@
+{
+  "livePreview": false,
+  "showInlineTitle": false,
+  "alwaysUpdateLinks": true,
+  "readableLineLength": true,
+  "defaultViewMode": "preview",
+  "propertiesInDocument": "source",
+  "showUnsupportedFiles": true,
+  "attachmentFolderPath": "./"
+}

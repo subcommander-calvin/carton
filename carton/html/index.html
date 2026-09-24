@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartoniuum Datacenter</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --primary: #3b82f6;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --hover: #2563eb;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .icon {
+            font-size: 2.5rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cartoniuum</h1>
+            <p class="subtitle">Virtual Datacenter Command</p>
+        </header>
+
+        <div class="grid">
+            <a href="/repos" class="card">
+                <div class="icon">📦</div>
+                <h2 class="card-title">The Yard</h2>
+                <p class="card-desc">Your self-hosted Gitea forge. Central command for all source code repositories.</p>
+            </a>
+            
+            <a href="/workspace" class="card">
+                <div class="icon">📂</div>
+                <h2 class="card-title">Workspace</h2>
+                <p class="card-desc">WebDAV access to the Stardrive and Rocket workspaces (Coming Soon).</p>
+            </a>
+
+            <a href="/litterbox" class="card">
+                <div class="icon">🐈</div>
+                <h2 class="card-title">Litterbox</h2>
+                <p class="card-desc">Nanobot GenAI WebUI running securely in your local datacenter (Coming Soon).</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

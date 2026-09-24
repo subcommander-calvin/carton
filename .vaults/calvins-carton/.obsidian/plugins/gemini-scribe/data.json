@@ -1,0 +1,15 @@
+{
+  "apiKey": "AIzaSyDpQxbJhfUtYeA8gPgE0NqUKXpBqbgYNuc",
+  "chatModelName": "gemini-1.5-pro",
+  "summaryModelName": "gemini-1.5-flash",
+  "completionsModelName": "gemini-1.5-flash-8b",
+  "sendContext": false,
+  "maxContextDepth": 2,
+  "searchGrounding": false,
+  "searchGroundingThreshold": 0.7,
+  "summaryFrontmatterKey": "summary",
+  "userName": "Commander Calvin",
+  "rewriteFiles": true,
+  "chatHistory": false,
+  "historyFolder": "gemini-scribe"
+}

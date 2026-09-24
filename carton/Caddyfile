@@ -1,0 +1,49 @@
+carton, station, localhost, 127.0.0.1, 172.18.0.5 {
+    log {
+        output stdout
+    }
+    tls internal
+
+    root * /var/www/html
+    file_server
+
+    handle_path /repos* {
+        reverse_proxy yard:3000
+    }
+
+    handle_path /workspace* {
+        reverse_proxy workspace:80
+    }
+
+    handle_path /litterbox* {
+        reverse_proxy litterbox:8080
+    }
+
+    # Nanobot SPA Static Assets (since it doesn't natively support subpaths)
+    handle /assets/* {
+        reverse_proxy litterbox:8080
+    }
+    handle /brand/* {
+        reverse_proxy litterbox:8080
+    }
+    handle /manifest.json {
+        reverse_proxy litterbox:8080
+    }
+    handle /api/* {
+        reverse_proxy litterbox:8080
+    }
+    handle /gateway/* {
+        reverse_proxy litterbox:8080
+    }
+    handle /health {
+        reverse_proxy litterbox:8080
+    }
+    handle /webui/* {
+        reverse_proxy litterbox:8080
+    }
+    handle /sw.js {
+        reverse_proxy litterbox:8080
+    }
+
+# Add more modes here as they come online!
+}

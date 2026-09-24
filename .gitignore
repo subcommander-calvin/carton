@@ -1,0 +1,10 @@
+# Ignore all data directories mapped to containers
+*/srv/
+*/*/srv/
+
+# Ignore logs and state
+**/*.log
+**/*.jsonl
+
+# OS files
+.DS_Store
