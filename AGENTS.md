@@ -21,8 +21,11 @@ The infrastructure cleanly separates development from production:
 - `carton`: The Caddy ingress router and dashboard.
 - `yard`: The Gitea forge (`/repos`).
 - `workspace`: The WebDAV file server (`/workspace`).
-- `litterbox`: The Nanobot GenAI WebUI (`/cat`).
-- `rocket`: A rapid-development environment.
+- `litterbox`: The Nanobot GenAI WebUI (`/litterbox`).
+- `lifepod`: Dynamic per-user containers (see ARCHITECTURE.md).
+
+> [!NOTE]
+> For a full diagram of the network bridge and lore, read `~/.carton/ARCHITECTURE.md`.
 
 > [!IMPORTANT]
 > **You are equipped with the `carton-operator` skill.** 

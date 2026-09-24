@@ -9,6 +9,10 @@ build:
 
 up: build
 	@mkdir -p $(CURDIR)/srv/cat/workspace $(CURDIR)/srv/cat/config
+	@if [ ! -f "$(CURDIR)/srv/cat/config/config.json" ] && [ -f "$(CURDIR)/default-config.json" ]; then \
+		cp $(CURDIR)/default-config.json $(CURDIR)/srv/cat/config/config.json; \
+		echo "🌱 Seeded default Nanobot config."; \
+	fi
 	docker run -d --name $(CONTAINER) --network $(NETWORK) \
 		-v $(CURDIR)/srv/cat/workspace:/srv/litterbox/workspace \
 		-v $(CURDIR)/srv/cat/config:/root/.nanobot \

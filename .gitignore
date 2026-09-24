@@ -6,5 +6,12 @@
 **/*.log
 **/*.jsonl
 
+# Ignore user secrets and history in lifepods
+lifepod/users/*/.*
+!lifepod/users/*/.gitkeep
+
+# Ignore herpetarium
+herpetarium/
+
 # OS files
 .DS_Store
