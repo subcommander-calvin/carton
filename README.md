@@ -30,7 +30,29 @@ To access the local datacenter, simply map the domains to your local loopback ad
 - **litterbox**: Nanobot GenAI WebUI hosted at `/cat`.
 - **rocket**: A rapid-development container.
 
-## Installation & Deployment
-1. Ensure `carton` is in your `/etc/hosts`.
-2. Run `make up MODE=carton` to start the ingress router.
-3. Run `make up MODE=<mode>` to spin up individual services.
+## Getting Started (First-Time Setup)
+
+The Cartoniuum is built as a self-contained "strange loop" where you build the infrastructure *from within* the infrastructure. 
+
+1. **Clone the Repo:** Fork this repository and clone it to your machine (preferably to `~/.carton`):
+   ```bash
+   git clone https://github.com/<your-username>/carton.git ~/.carton
+   cd ~/.carton
+   ```
+
+2. **Bootstrap the Bridge:** Run the bootstrap sequence to automatically stand up the Caddy router, the Gitea Forge, and the Nanobot UI on the `carton-bridge` network.
+   ```bash
+   make bootstrap
+   ```
+   *Note: Ensure `carton` and `station` point to `127.0.0.1` in your `/etc/hosts`.*
+
+3. **Spin up your Lifepod:** You do not need to install local development tools. Start the Calvin lifepod:
+   ```bash
+   make up MODE=lifepod PROFILE=calvin
+   ```
+
+4. **Enter the Matrix:** Drop into your lifepod shell:
+   ```bash
+   docker exec -it calvin bash
+   ```
+   **Magic Trick:** The `calvin` user inside the container is dynamically created with your host's exact UID and GID! This means you can use VS Code or any editor on your host machine to write code in `~/.carton`, and push to GitHub from *inside* the lifepod, with zero permission conflicts.

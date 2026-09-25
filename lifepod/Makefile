@@ -6,7 +6,10 @@ build:
 		echo "Error: No Dockerfile found for profile $(PROFILE) at users/$(PROFILE)/Dockerfile"; \
 		exit 1; \
 	fi
-	docker build -t lifepod-$(PROFILE) users/$(PROFILE)
+	docker build \
+		--build-arg USER_UID=$(shell id -u) \
+		--build-arg USER_GID=$(shell id -g) \
+		-t lifepod-$(PROFILE) users/$(PROFILE)
 
 up: build
 	mkdir -p $(CURDIR)/users/$(PROFILE)

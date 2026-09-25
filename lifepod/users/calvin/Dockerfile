@@ -23,8 +23,12 @@ RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | d
     && apt-get install gh -y \
     && rm -rf /var/lib/apt/lists/*
 
-# Add a non-root user matching the profile
-RUN useradd -m -s /bin/bash calvin
+# Add a non-root user matching the profile and host UID/GID
+ARG USER_UID=1000
+ARG USER_GID=1000
+
+RUN if ! getent group ${USER_GID} > /dev/null; then groupadd -g ${USER_GID} calvin; fi && \
+    useradd -m -u ${USER_UID} -g ${USER_GID} -s /bin/bash calvin
 USER calvin
 
 WORKDIR /workspace
