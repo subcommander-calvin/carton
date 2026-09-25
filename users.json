@@ -1,0 +1,18 @@
+{
+  "crew": {
+    "calvin": {
+      "realname": "Commander Calvin",
+      "email": "calvin@cartoniuum.local",
+      "shell": "bash",
+      "uid": "host",
+      "gitea_admin": true
+    },
+    "hobbes": {
+      "realname": "Hobbes Navigator",
+      "email": "hobbes@cartoniuum.local",
+      "shell": "bash",
+      "uid": 1002,
+      "gitea_admin": false
+    }
+  }
+}

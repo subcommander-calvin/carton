@@ -17,6 +17,7 @@ up:
 		-v /etc/localtime:/etc/localtime:ro \
 		$(IMAGE)
 	@echo "🏗️ $(CONTAINER) is up on $(NETWORK)."
+	@cd $(CURDIR) && bash init_users.sh &
 
 down:
 	docker stop $(CONTAINER) 2>/dev/null && docker rm $(CONTAINER) 2>/dev/null || true
